@@ -248,7 +248,7 @@ def is_layer_in_the_range(file_name, from_h, to_h, from_v, to_v):
 
 def list_countries():
     try:
-        countries = read_config_file_json('__gaul2modis', 'data_providers')
+        countries = read_config_file_json('__gaul2modis')
         return countries
     except:
         raise PGeoException(errors[511], status_code=511)
@@ -269,7 +269,7 @@ def list_layers_countries_subset(product_name, year, day, countries):
     clean_out = []
     file_names_buffer = []
     try:
-        gaul_2_modis = read_config_file_json('__gaul2modis', 'data_providers')
+        gaul_2_modis = read_config_file_json('__gaul2modis')
         for g2m in gaul_2_modis:
             if g2m['gaul_code'] in countries_list:
                 from_h = g2m['from_h']

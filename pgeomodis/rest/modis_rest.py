@@ -1,9 +1,11 @@
 import json
 from flask import Blueprint
 from flask import Response
+from flask import request
 from flask.ext.cors import cross_origin
 from pgeo.error.custom_exceptions import PGeoException
 from pgeomodis.core import modis_core as m
+from flask import Flask, render_template, url_for
 
 
 modis = Blueprint('modis', __name__)
@@ -78,6 +80,8 @@ def list_layers_countries_subset_service(product_name, year, day, countries):
 @modis.route('/countries/')
 @cross_origin(origins='*')
 def list_countries():
+    print request.host_url
+
     try:
         out = m.list_countries()
         return Response(json.dumps(out), content_type='application/json; charset=utf-8')
