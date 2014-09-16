@@ -5,7 +5,6 @@ from flask import request
 from flask.ext.cors import cross_origin
 from pgeo.error.custom_exceptions import PGeoException
 from pgeomodis.core import modis_core as m
-from flask import Flask, render_template, url_for
 
 
 modis = Blueprint('modis', __name__)
