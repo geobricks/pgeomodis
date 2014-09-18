@@ -4,19 +4,8 @@ from pgeo.error.custom_exceptions import errors
 from pgeo.utils.date import day_of_the_year_to_date
 from bs4 import BeautifulSoup
 import urllib
-import json
-import os
-
-
-def read_config_file_json(filename):
-    directory = os.path.dirname(os.path.dirname(__file__))
-    filename = filename.lower()
-    path = directory + '/config/'
-    extension = '' if '.json' in filename else '.json'
-    return json.loads(open(path + filename + extension).read())
-
-
-conf = read_config_file_json('modis')
+from pgeomodis.config.gaul2modis import map
+from pgeomodis.config.modis_config import config as conf
 
 
 def get_modis_product_table():
@@ -247,11 +236,7 @@ def is_layer_in_the_range(file_name, from_h, to_h, from_v, to_v):
 
 
 def list_countries():
-    try:
-        countries = read_config_file_json('__gaul2modis')
-        return countries
-    except:
-        raise PGeoException(errors[511], status_code=511)
+    return map
 
 
 def list_layers_countries_subset(product_name, year, day, countries):
@@ -269,8 +254,7 @@ def list_layers_countries_subset(product_name, year, day, countries):
     clean_out = []
     file_names_buffer = []
     try:
-        gaul_2_modis = read_config_file_json('__gaul2modis')
-        for g2m in gaul_2_modis:
+        for g2m in map:
             if g2m['gaul_code'] in countries_list:
                 from_h = g2m['from_h']
                 to_h = g2m['to_h']

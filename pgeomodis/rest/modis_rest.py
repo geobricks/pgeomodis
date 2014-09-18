@@ -20,7 +20,6 @@ def list_products_service():
         raise PGeoException(e.get_message(), e.get_status_code())
 
 
-@modis.route('/<product_name>')
 @modis.route('/<product_name>/')
 @cross_origin(origins='*')
 def list_years_service(product_name):
@@ -31,7 +30,6 @@ def list_years_service(product_name):
         raise PGeoException(e.get_message(), e.get_status_code())
 
 
-@modis.route('/<product_name>/<year>')
 @modis.route('/<product_name>/<year>/')
 @cross_origin(origins='*')
 def list_days_service(product_name, year):
@@ -42,7 +40,6 @@ def list_days_service(product_name, year):
         raise PGeoException(e.get_message(), e.get_status_code())
 
 
-@modis.route('/<product_name>/<year>/<day>')
 @modis.route('/<product_name>/<year>/<day>/')
 @cross_origin(origins='*')
 def list_layers_service(product_name, year, day):
@@ -53,7 +50,6 @@ def list_layers_service(product_name, year, day):
         raise PGeoException(e.get_message(), e.get_status_code())
 
 
-@modis.route('/<product_name>/<year>/<day>/<from_h>/<to_h>/<from_v>/<to_v>')
 @modis.route('/<product_name>/<year>/<day>/<from_h>/<to_h>/<from_v>/<to_v>/')
 @cross_origin(origins='*')
 def list_layers_subset_service(product_name, year, day, from_h, to_h, from_v, to_v):
@@ -64,7 +60,6 @@ def list_layers_subset_service(product_name, year, day, from_h, to_h, from_v, to
         raise PGeoException(e.get_message(), e.get_status_code())
 
 
-@modis.route('/<product_name>/<year>/<day>/<countries>')
 @modis.route('/<product_name>/<year>/<day>/<countries>/')
 @cross_origin(origins='*')
 def list_layers_countries_subset_service(product_name, year, day, countries):
@@ -75,12 +70,10 @@ def list_layers_countries_subset_service(product_name, year, day, countries):
         raise PGeoException(e.get_message(), e.get_status_code())
 
 
-@modis.route('/countries')
 @modis.route('/countries/')
 @cross_origin(origins='*')
 def list_countries():
     print request.host_url
-
     try:
         out = m.list_countries()
         return Response(json.dumps(out), content_type='application/json; charset=utf-8')

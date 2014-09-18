@@ -1,4 +1,4 @@
-[
+map = [
     {
         "to_v": 4,
         "gaul_label": "Canada",

@@ -1,4 +1,4 @@
-{
+config = {
     "version": "1.0",
     "source": {
         "type": "FTP",
@@ -99,10 +99,10 @@
         }
     ],
     "analysis": {
-        "create_avg": true,
-        "create_da": true,
+        "create_avg": True,
+        "create_da": True,
         "stats": {
-            "enable": true,
+            "enable": True,
             "scripts": [
                 {
                     "file": "sadc.json",
@@ -140,7 +140,7 @@
             "description": {
                 "en": "Available Layers",
                 "it": "Layers Disponibili",
-                "pt": "Layers Disponíveis"
+                "pt": "Layers Disponiveis"
             },
             "selection_type": "multiple"
         },
@@ -188,7 +188,7 @@
             "description": {
                 "en": "Countries",
                 "it": "Paesi",
-                "pt": "Países"
+                "pt": "Paises"
             },
             "selection_type": "multiple"
         },
@@ -211,7 +211,7 @@
                 "description": {
                     "en": "Available Products",
                     "it": "Prodotti Disponibili",
-                    "pt": "Produtos Disponíveis"
+                    "pt": "Produtos Disponiveis"
                 },
                 "selection_type": "single",
                 "services": [
@@ -232,7 +232,7 @@
                         "description": {
                             "en": "Available Years",
                             "it": "Anni Disponibili",
-                            "pt": "Anos Disponíveis"
+                            "pt": "Anos Disponiveis"
                         },
                         "selection_type": "single",
                         "services": [
@@ -257,7 +257,7 @@
                                 "description": {
                                     "en": "Available Days - From",
                                     "it": "Giorni Disponibili - Da",
-                                    "pt": "Dias Disponíveis - Desde"
+                                    "pt": "Dias Disponiveis - Desde"
                                 },
                                 "selection_type": "single"
                             },
@@ -282,7 +282,7 @@
                                 "description": {
                                     "en": "Available Days - To",
                                     "it": "Giorni Disponibili - A",
-                                    "pt": "Dias Disponíveis - Até"
+                                    "pt": "Dias Disponiveis - Ate"
                                 },
                                 "selection_type": "single"
                             }
