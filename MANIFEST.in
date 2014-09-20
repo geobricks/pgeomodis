@@ -1,2 +1,4 @@
+include *.md *.txt *.json
 recursive-include pgeomodis *
 recursive-include pgeomodis *.json
+recursive-include pgeomodis *.md

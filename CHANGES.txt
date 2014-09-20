@@ -3,3 +3,6 @@ v0.1.1,  04-08-2014 -- Fixes for the distribution.
 v0.1.2,  04-08-2014 -- Fixes for the distribution.
 v0.1.3,  04-08-2014 -- Fixes for the distribution.
 v0.1.4,  04-08-2014 -- Fixes for the distribution.
+v0.1.5,  20-09-2014 -- JSON files converted to dictionaries.
+v0.1.6,  20-09-2014 -- Fixes for the distribution.
+v0.1.7,  20-09-2014 -- Fixes for the distribution.
